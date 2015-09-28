@@ -2,7 +2,10 @@ App.AjaxLocationChanger =
 
   initialize: ->
     $('.js-ajax-location-changer').on 'change', ->
-      console.log $(this).val();
-      # $.ajax(url: "/debates/index").done (html) ->
-        # $("#results").append html
-        # alert('hi');
+      value= $(this).val();
+      $.ajax(
+        data: { search: value, page: 1 },
+        dataType: "script").done (response) -> 
+          $('.debate.clear').remove();
+          $(".filters").after('<p>HOLA</p>');
+          console.log(response);

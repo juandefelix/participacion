@@ -14,6 +14,10 @@ class DebatesController < ApplicationController
     @debates = @debates.page(params[:page]).for_render.send("sort_by_#{@current_order}")
     @tag_cloud = Debate.tag_counts.order(debates_count: :desc, name: :asc).limit(20)
     set_debate_votes(@debates)
+     respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show
