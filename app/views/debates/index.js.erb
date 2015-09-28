@@ -1,1 +1,2 @@
-$("<%= escape_javascript(render @debates) %>")
+$('.debate.clear').remove();
+$(".filters").after("<%= escape_javascript(render @debates, layout: false) %>");
