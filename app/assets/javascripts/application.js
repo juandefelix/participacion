@@ -24,6 +24,7 @@
 //= require comments
 //= require dropdown
 //= require ie_alert
+//= require ajax_location_changer
 //= require location_changer
 //= require moderator_comment
 //= require moderator_debates
@@ -42,6 +43,7 @@ var initialize_modules = function() {
   App.Votes.initialize();
   App.Tags.initialize();
   App.Dropdown.initialize();
+  App.AjaxLocationChanger.initialize();
   App.LocationChanger.initialize();
   App.CheckAllNone.initialize();
   App.PreventDoubleSubmission.initialize();

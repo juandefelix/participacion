@@ -4,10 +4,10 @@
 %>
 
 <form class="inline-block">
-  <select class="js-location-changer js-order-selector select-order" data-order="<%= @current_order %>" name="order-selector">
+  <select class="js-ajax-location-changer js-order-selector select-order" data-order="<%= @current_order %>" name="order-selector">
      <% @valid_orders.each do |order| %>
        <option <%= 'selected' if order == @current_order %>
-               value='<%= current_path_with_query_params(order: order, page: 1) %>'>
+               value='<%= order %>'>
          <%= t("#{i18n_namespace}.orders.#{order}") %>
        </option>
      <% end %>
