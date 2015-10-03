@@ -19,3 +19,10 @@ App.Tags =
           $tag_input.val(current_tags.join(','))
           false
         ).data 'initialized', 'yes'
+
+    $('#debate_tag_list').focusout (event) ->
+      TRIM_REGEX = /\s*,\s*/
+      $list_element = $(event.target)
+      new_val = $list_element.val().replace(TRIM_REGEX, ',').trim()
+      $list_element.val(new_val);
+
